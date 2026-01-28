@@ -10,5 +10,9 @@ public class Main {
         bil.incrementSpeed(20);
         bil.turnRight();
         bil.move();
+        bil.turnLeft();
+        bil.move();
+        bil.turnLeft();
+        bil.move();
     }
 }

@@ -8,7 +8,7 @@ public class Car extends Vehicle implements Movable {
     private double currentRotation = 0;
     private double xPos;
     private double yPos;
-    private Engine engine;
+    public Engine engine;
 
     public Car(Color color, String modelName, Engine engine, int nrDoors){
         super(color,modelName);
@@ -36,6 +36,10 @@ public class Car extends Vehicle implements Movable {
         return nrDoors;
     }
 
+    public double getCurrentRotation() {
+        return currentRotation;
+    }
+
     @Override
     public void move(){
         xPos += Math.cos(currentRotation) * currentSpeed;
@@ -51,8 +55,12 @@ public class Car extends Vehicle implements Movable {
 
     @Override
     public void turnRight(){
+        double prevRad = currentRotation;
         currentRotation -= (Math.PI/12);
         currentRotation %= (2*Math.PI);
+        if (currentRotation < 0 && prevRad >= 0) {
+            currentRotation += 2*Math.PI;
+        }
     }
 
 
