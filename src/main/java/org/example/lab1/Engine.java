@@ -11,7 +11,7 @@ public class Engine {
     }
 
     public void setTurboOn(){
-        turboOn = true;
+        turboOn = (hasTurbo == true) ? true:false;
     }
 
     public void setTurboOff(){
@@ -26,5 +26,9 @@ public class Engine {
 
     public double getEnginePower(){
         return enginePower;
+    }
+
+    public boolean isTurboOn() {
+        return turboOn;
     }
 }

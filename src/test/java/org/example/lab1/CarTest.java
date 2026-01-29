@@ -29,4 +29,26 @@ class CarTest {
         c.incrementSpeed(amount);
         assertEquals(10, c.currentSpeed);
     }
+    @Test
+    void notMovingWhenEngineOff() {
+        Car bil = new Car(Color.GREEN, "V70", new Engine(90, true), 4);
+        double startX = bil.getxPos();
+        double startY = bil.getyPos();
+
+        bil.stopEngine();
+        bil.move();
+        // Kontrollerar om bilen rör sig när motorn är av från början...
+        assertEquals(startX, bil.getxPos());
+        assertEquals(startY, bil.getyPos());
+
+        // Kontrollerar om den rör sig om motorn stängs av
+        bil.incrementSpeed(10);
+        bil.move();
+        startX = bil.getxPos();
+        startY = bil.getyPos();
+        bil.stopEngine();
+        bil.move();
+        assertEquals(startX, bil.getxPos());
+        assertEquals(startY, bil.getyPos());
+    }
 }

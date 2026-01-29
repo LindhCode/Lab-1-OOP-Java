@@ -40,6 +40,14 @@ public class Car extends Vehicle implements Movable {
         return currentRotation;
     }
 
+    public double getxPos() {
+        return xPos;
+    }
+
+    public double getyPos() {
+        return yPos;
+    }
+
     @Override
     public void move(){
         xPos += Math.cos(currentRotation) * currentSpeed;
