@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import java.awt.*;
 
-import static java.awt.Color.black;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CarTest {
@@ -28,8 +27,9 @@ class CarTest {
         Car c = new Car(Color.BLUE, "test car", new Engine(100, false),5);
         double amount = 10;
         c.incrementSpeed(amount);
-        assertEquals(10, c.currentSpeed);
+        assertEquals(10, c.getCurrentSpeed());
     }
+
     @Test
     void notMovingWhenEngineOff() {
         Car bil = new Car(Color.GREEN, "V70", new Engine(90, true), 4);
@@ -69,7 +69,7 @@ class CarTest {
 
     @Test
     void Turning() {
-        Car car = new Car(black, "Volvo", new Engine(100, false),4 );
+        Car car = new Car(Color.black, "Volvo", new Engine(100, false),4 );
         car.startEngine();
 
         double beforeX = car.getxPos();
@@ -123,4 +123,5 @@ class CarTest {
         //fjärde Kvadrant//
 
     }
+
 }
