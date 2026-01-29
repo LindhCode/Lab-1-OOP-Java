@@ -8,7 +8,6 @@ import java.awt.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CarTest {
-
     @Test
     @DisplayName("Test for the mod operations when turning left and right")
     void turnLeftTurnRight() {
@@ -27,10 +26,14 @@ class CarTest {
         Car c = new Car(Color.BLUE, "test car", new Engine(100, false),5);
         double amount = 10;
         c.incrementSpeed(amount);
-        assertEquals(10, c.getCurrentSpeed());
+        assertEquals(0, c.getCurrentSpeed());
+        c.startEngine();
+        c.incrementSpeed(amount);
+        assertEquals(10.1, c.getCurrentSpeed());
     }
 
     @Test
+    @DisplayName("Test if the car can move in different engine stages")
     void notMovingWhenEngineOff() {
         Car bil = new Car(Color.GREEN, "V70", new Engine(90, true), 4);
         double startX = bil.getxPos();
@@ -52,6 +55,7 @@ class CarTest {
         assertEquals(startX, bil.getxPos());
         assertEquals(startY, bil.getyPos());
     }
+
     void MoveNextKvadrant(Car car){
         for (int i = 0 ; i <6; i++)
             car.turnLeft();}
@@ -66,8 +70,8 @@ class CarTest {
         return new double[]{afterX, afterY};
     }
 
-
     @Test
+    @DisplayName("Test if the x and y coordinates act correctly in different quadrants")
     void Turning() {
         Car car = new Car(Color.black, "Volvo", new Engine(100, false),4 );
         car.startEngine();
@@ -123,5 +127,34 @@ class CarTest {
         //fjärde Kvadrant//
 
     }
+    @Test
+    @DisplayName("Controls that current speed always less or equal to engine power")
+    void SpeedLimit(){
+        Car car = new Car(Color.black, "Volvo", new Engine(100, false),4 );
+        car.startEngine();
+        for (int i = 0 ; i <99;i++){
+            car.gas(1);
 
+            assertTrue(car.getCurrentSpeed() < car.getEngine().getEnginePower());
+        }
+    }
+
+    @Test
+    @DisplayName("Controls that gas and break only changes within 0-1 range")
+    void GasBreakLimit() {
+        Car car = new Car(Color.black, "Volvo", new Engine(100, false), 4);
+        car.startEngine();
+        double previousSpeed = car.getCurrentSpeed();
+        car.gas(1.1);
+        assertEquals(previousSpeed, car.getCurrentSpeed());
+
+        car.gas(-1);
+        assertEquals(previousSpeed,car.getCurrentSpeed());
+
+        car.brake(-1);
+        assertEquals(previousSpeed,car.getCurrentSpeed());
+        car.brake(2);
+        assertEquals(previousSpeed,car.getCurrentSpeed());
+
+    }
 }

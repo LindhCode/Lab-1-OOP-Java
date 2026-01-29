@@ -7,7 +7,9 @@
     <list default="true" id="05b2a278-b8c7-4f54-9be3-d199432c1004" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/Volvo240.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/Volvo240.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/lab1/CarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/lab1/CarTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/lab1/EngineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/lab1/EngineTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +52,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "axels-branch",
+    "git-widget-placeholder": "alfred",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/axell/LABS/Lab-1-OOP-Java",
