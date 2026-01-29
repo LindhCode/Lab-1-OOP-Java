@@ -123,5 +123,34 @@ class CarTest {
         //fjärde Kvadrant//
 
     }
+    @Test
+    @DisplayName("Controls that current speed always less or equal to eginepower")
+    void SpeedLimit(){
+        Car car = new Car(Color.black, "Volvo", new Engine(100, false),4 );
+        car.startEngine();
+        for (int i = 0 ; i <99;i++){
+            car.gas(1);
 
+            assertTrue(car.getCurrentSpeed() < car.getEngine().getEnginePower());
+        }
+    }
+
+    @Test
+    @DisplayName("Controls that gas and break only changes with-in 0-1 range")
+    void GasBreakLimit() {
+        Car car = new Car(Color.black, "Volvo", new Engine(100, false), 4);
+        car.startEngine();
+        double previousSpeed = car.getCurrentSpeed();
+        car.gas(1.1);
+        assertEquals(previousSpeed, car.getCurrentSpeed());
+
+        car.gas(-1);
+        assertEquals(previousSpeed,car.getCurrentSpeed());
+
+        car.brake(-1);
+        assertEquals(previousSpeed,car.getCurrentSpeed());
+        car.brake(2);
+        assertEquals(previousSpeed,car.getCurrentSpeed());
+
+    }
 }

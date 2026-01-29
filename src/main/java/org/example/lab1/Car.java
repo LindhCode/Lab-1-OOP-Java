@@ -24,10 +24,16 @@ public class Car extends Vehicle implements Movable {
         return currentSpeed;
     }
 
-    public void incrementSpeed(double amount){
-        currentSpeed = getCurrentSpeed() + engine.speedFactor() * amount;
+    public void incrementSpeed(double amount) {
+        if (currentSpeed != 0) {
+            currentSpeed = getCurrentSpeed() + engine.speedFactor() * amount;
+            if (currentSpeed < 0) {
+                currentSpeed = 0;
+            } else if (currentSpeed > engine.getEnginePower()) {
+                currentSpeed = engine.getEnginePower();
+            }
+        }
     }
-
     public void startEngine(){
         currentSpeed = 0.1;
     }
@@ -50,6 +56,18 @@ public class Car extends Vehicle implements Movable {
 
     public double getyPos() {
         return yPos;
+    }
+
+    public void gas(double amount) {
+        if (amount >= 0 && amount <= 1) {
+            incrementSpeed(amount);
+        }
+    }
+
+    public void brake(double amount) {
+        if (amount >= 0 && amount <= 1) {
+            incrementSpeed(-amount);
+        }
     }
 
     @Override
