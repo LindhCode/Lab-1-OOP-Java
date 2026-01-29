@@ -4,15 +4,15 @@ import java.awt.*;
 
 public class Main {
     static void main(String[] args) {
-        Car bil = new Car(Color.GREEN,"V70",new Engine(90,true), 4);
-
-        bil.startEngine();
-        bil.incrementSpeed(20);
-        bil.turnRight();
-        bil.move();
-        bil.turnLeft();
-        bil.move();
-        bil.turnLeft();
-        bil.move();
+        Car c = new Saab95(Color.black);
+        c.gas(1);
+        c.brake(1);
+        c.incrementSpeed(100);
+        c.gas(1);
+        c.startEngine();
+        c.brake(1);
+        c.gas(1);
+        c.incrementSpeed(100);
+        System.out.println(c.getCurrentSpeed());
     }
 }

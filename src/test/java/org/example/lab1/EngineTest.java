@@ -1,5 +1,6 @@
 package org.example.lab1;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static java.awt.Color.*;
@@ -7,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class EngineTest {
     @Test
+    @DisplayName("Test if a car with or without turbo can use the turbo methods")
     public void turboMethodsUseability() {
         Engine engineWithTurbo = new Engine(100, true);
         Engine engineWithoutTurbo = new Engine(100, false);
@@ -25,6 +27,7 @@ class EngineTest {
     }
 
     @Test
+    @DisplayName("Test that the speedFactor method behaves properly based on turbo")
     public void speedFactorConsistency() {
         Engine engineWithTurbo = new Engine(100, true);
         Engine engineWithoutTurbo = new Engine(100, false);
