@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.awt.*;
 
+import static java.awt.Color.black;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CarTest {
@@ -50,5 +51,76 @@ class CarTest {
         bil.move();
         assertEquals(startX, bil.getxPos());
         assertEquals(startY, bil.getyPos());
+    }
+    void MoveNextKvadrant(Car car){
+        for (int i = 0 ; i <6; i++)
+            car.turnLeft();}
+
+    double[] updateXY(Car car) {
+        MoveNextKvadrant(car);
+        car.move();
+
+        double afterX = car.getxPos();
+        double afterY = car.getyPos();
+
+        return new double[]{afterX, afterY};
+    }
+
+
+    @Test
+    void Turning() {
+        Car car = new Car(black, "Volvo", new Engine(100, false),4 );
+        car.startEngine();
+
+        double beforeX = car.getxPos();
+        double beforeY = car.getyPos();
+        for (int i = 0 ; i < 3; i++) {
+            car.turnLeft();
+        }
+
+        car.incrementSpeed(20);
+        car.move();
+
+        double afterX = car.getxPos();
+        double afterY = car.getyPos();
+
+        assertTrue(beforeX<afterX);
+        assertTrue(beforeY<afterY);
+        //första Kvadrant//
+
+        beforeX = afterX;
+        beforeY = afterY;
+
+        double[] pos = updateXY(car);
+        afterX = pos[0];
+        afterY = pos[1];
+
+        assertTrue(beforeX > afterX);
+        assertTrue(beforeY < afterY);
+        //andra kvadrant//
+
+        beforeX = afterX;
+        beforeY = afterY;
+
+
+        pos = updateXY(car);
+        afterX = pos[0];
+        afterY = pos[1];
+
+        assertTrue(beforeX > afterX);
+        assertTrue(beforeY > afterY);
+
+        //tredje kvadrant//
+        beforeX = afterX;
+        beforeY = afterY;
+
+        pos = updateXY(car);
+        afterX = pos[0];
+        afterY = pos[1];
+
+        assertTrue(beforeX < afterX);
+        assertTrue(beforeY > afterY);
+        //fjärde Kvadrant//
+
     }
 }
