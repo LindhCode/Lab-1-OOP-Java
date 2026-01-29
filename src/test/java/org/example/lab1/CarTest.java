@@ -25,8 +25,9 @@ class CarTest {
     @DisplayName("Test if the speed increments correctly")
     void incrementSpeed() {
         Car c = new Car(Color.BLUE, "test car", new Engine(100, false),5);
+        // This test is quite trivial due to the simple sum that the incrementspeed calculate
         double amount = 10;
         c.incrementSpeed(amount);
-        assertEquals(10, c.currentSpeed);
+        assertEquals(10, c.getCurrentSpeed());
     }
 }

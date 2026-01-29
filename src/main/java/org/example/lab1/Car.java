@@ -3,12 +3,12 @@ package org.example.lab1;
 import java.awt.*;
 
 public class Car extends Vehicle implements Movable {
-    public int nrDoors;
-    public double currentSpeed;
+    private int nrDoors;
+    private double currentSpeed;
     private double currentRotation = 0;
     private double xPos;
     private double yPos;
-    public Engine engine;
+    private Engine engine;
 
     public Car(Color color, String modelName, Engine engine, int nrDoors){
         super(color,modelName);
@@ -24,6 +24,9 @@ public class Car extends Vehicle implements Movable {
         currentSpeed = getCurrentSpeed() + engine.speedFactor() * amount;
     }
 
+    public Engine getEngine() {
+        return engine;
+    }
     public void startEngine(){
         currentSpeed = 0.1;
     }
