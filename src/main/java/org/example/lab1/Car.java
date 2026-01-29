@@ -48,6 +48,18 @@ public class Car extends Vehicle implements Movable {
         return xPos;
     }
 
+    public void gas(double amount) {
+        if (amount >= 0 && amount <= 1) {
+            incrementSpeed(amount);
+        }
+    }
+
+    public void brake(double amount) {
+        if (amount >= 0 && amount <= 1) {
+            incrementSpeed(-amount);
+        }
+    }
+
     public double getyPos() {
         return yPos;
     }
