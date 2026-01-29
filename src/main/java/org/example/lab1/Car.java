@@ -26,6 +26,12 @@ public class Car extends Vehicle implements Movable {
 
     public void incrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() + engine.speedFactor() * amount;
+        if (currentSpeed < 0) {
+            currentSpeed = 0;
+        }
+        else if (currentSpeed > engine.getEnginePower()){
+            currentSpeed = engine.getEnginePower();
+        }
     }
 
     public void startEngine(){
