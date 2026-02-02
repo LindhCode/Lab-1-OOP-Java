@@ -1,0 +1,113 @@
+package org.example.lab1;
+import java.awt.*;
+
+public class Truck extends Vehicle implements hasFlatbed, Movable{
+    private int nrDoors;
+    private double currentSpeed;
+    private double currentRotation = 0;
+    private double xPos;
+    private double yPos;
+    private Engine engine;
+    private int currentAngle;
+
+    public Truck(Color color, String modelName, Engine engine, int nrDoors){
+        super(color,modelName);
+        this.engine = engine;
+        this.nrDoors = nrDoors;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public double getCurrentSpeed(){
+        return currentSpeed;
+    }
+
+    public void incrementSpeed(double amount){
+        if (currentSpeed != 0) {
+            currentSpeed = getCurrentSpeed() + engine.speedFactor() * amount;
+            if (currentSpeed < 0.1) {
+                currentSpeed = 0.1;
+            }
+            else if (currentSpeed > engine.getEnginePower()){
+                currentSpeed = engine.getEnginePower();
+            }
+        }
+    }
+
+    public void startEngine(){
+        currentSpeed = 0.1;
+    }
+
+    public void stopEngine(){
+        currentSpeed = 0;
+    }
+
+    public int getNrDoors(){
+        return nrDoors;
+    }
+
+    public double getCurrentRotation() {
+        return currentRotation;
+    }
+
+    public int getCurrentAngle(){
+        return currentAngle;
+    }
+
+    public double getxPos() {
+        return xPos;
+    }
+
+    public void gas(double amount) {
+        if (amount >= 0 && amount <= 1) {
+            incrementSpeed(amount);
+        }
+    }
+
+    public void brake(double amount) {
+        if (amount >= 0 && amount <= 1) {
+            incrementSpeed(-amount);
+        }
+    }
+
+    public double getyPos() {
+        return yPos;
+    }
+
+    // From hasFlatbed
+    public void liftFlatbed(){
+        // TODO - Add logic here
+    }
+    public void lowerFlatbed(){
+        // TODO - Add logic here
+    }
+
+    // From Movable
+    @Override
+    public void move(){
+        // TODO - Add logic here
+        xPos += Math.cos(currentRotation) * currentSpeed;
+        yPos += Math.sin(currentRotation) * currentSpeed;
+        System.out.printf("The car moved to X:%f, Y:%f\n",xPos,yPos);
+    }
+
+    @Override
+    public void turnLeft(){
+        currentRotation += (Math.PI/12);
+        currentRotation %= (2*Math.PI);
+    }
+
+    @Override
+    public void turnRight(){
+        double prevRad = currentRotation;
+        currentRotation -= (Math.PI/12);
+        currentRotation %= (2*Math.PI);
+        if (currentRotation < 0 && prevRad >= 0) {
+            currentRotation += 2*Math.PI;
+        }
+    }
+
+
+}
