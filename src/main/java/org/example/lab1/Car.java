@@ -2,80 +2,16 @@ package org.example.lab1;
 
 import java.awt.*;
 
-public class Car extends Vehicle implements Movable {
-    private int nrDoors;
-    private double currentSpeed;
-    private double currentRotation = 0;
-    private double xPos;
-    private double yPos;
-    private Engine engine;
+public class Car extends Automobile implements Movable {
 
     public Car(Color color, String modelName, Engine engine, int nrDoors){
-        super(color,modelName);
-        this.engine = engine;
-        this.nrDoors = nrDoors;
-    }
-
-    public Engine getEngine() {
-        return engine;
-    }
-
-    public double getCurrentSpeed(){
-        return currentSpeed;
-    }
-
-    public void incrementSpeed(double amount){
-        if (currentSpeed != 0) {
-            currentSpeed = getCurrentSpeed() + engine.speedFactor() * amount;
-            if (currentSpeed < 0.1) {
-                currentSpeed = 0.1;
-            }
-            else if (currentSpeed > engine.getEnginePower()){
-                currentSpeed = engine.getEnginePower();
-            }
-        }
-    }
-
-    public void startEngine(){
-        currentSpeed = 0.1;
-    }
-
-    public void stopEngine(){
-        currentSpeed = 0;
-    }
-
-    public int getNrDoors(){
-        return nrDoors;
-    }
-
-    public double getCurrentRotation() {
-        return currentRotation;
-    }
-
-    public double getxPos() {
-        return xPos;
-    }
-
-    public void gas(double amount) {
-        if (amount >= 0 && amount <= 1) {
-            incrementSpeed(amount);
-        }
-    }
-
-    public void brake(double amount) {
-        if (amount >= 0 && amount <= 1) {
-            incrementSpeed(-amount);
-        }
-    }
-
-    public double getyPos() {
-        return yPos;
+        super(color,modelName,engine,nrDoors);
     }
 
     @Override
     public void move(){
-        xPos += Math.cos(currentRotation) * currentSpeed;
-        yPos += Math.sin(currentRotation) * currentSpeed;
+        xPos += Math.cos(getCurrentRotation()) * getCurrentSpeed();
+        yPos += Math.sin(getCurrentRotation()) * getCurrentSpeed();
         System.out.printf("The car moved to X:%f, Y:%f\n",xPos,yPos);
     }
 
