@@ -1,11 +1,21 @@
 package org.example.lab1;
 
-import java.awt.*;
+import static java.awt.Color.*;
 
 public class Main {
     static void main(String[] args) {
-        Car c = new Saab95(Color.black);
-        c = new Volvo240(Color.WHITE);
+        Truck minTruck = new Truck(black,"truck",new Engine(700,true),2);
+        Scania scania = new Scania(blue);
+        minTruck.startEngine();
+        minTruck.gas(1);
+        System.out.println("Truck objects move()-method: ");
+        minTruck.move();
+
+        scania.startEngine();
+        scania.gas(0.7);
+        System.out.println("Scania objects move()-method: ");
+        scania.move();
+
 
     }
 }
