@@ -18,13 +18,16 @@ class TruckTest {
         t.gas(1);
         t.liftFlatbed();
         assertEquals(0, t.getCurrentAngle());
-        // The flatbeed should rotate 70 degrees when the truck stands still
+        // The flatbeed should rotate a maximum of 70 degrees
         t.stopEngine();
-        t.liftFlatbed();
+        for (int i = 0; i < 15; i++) {
+            t.liftFlatbed();
+        }
+        System.out.println(t.getCurrentAngle());
         assertEquals(70, t.getCurrentAngle());
         // The truck should not move when flatbed is rotated
         t.startEngine();
         t.gas(1);
-        assertEquals(0, t.getCurrentAngle());
+        assertEquals(0, t.getCurrentSpeed());
     }
 }
