@@ -8,6 +8,10 @@ public class Truck extends Automobile implements hasFlatbed, Movable{
         super(color,modelName, engine, nrDoors);
     }
 
+    public int getCurrentAngle() {
+        return currentAngle;
+    }
+
     // From hasFlatbed
     public void liftFlatbed(){
         // TODO - Add logic here
