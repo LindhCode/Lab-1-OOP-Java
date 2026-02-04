@@ -2,11 +2,14 @@ package org.example.lab1;
 import java.awt.*;
 
 public class Truck extends Automobile implements hasFlatbed, Movable{
-    private int currentAngle;
     private int flatbedAngle = 0;
 
     public Truck(Color color, String modelName, Engine engine, int nrDoors){
         super(color,modelName, engine, nrDoors);
+    }
+
+    public int getCurrentAngle() {
+        return flatbedAngle;
     }
 
     // From hasFlatbed
@@ -24,7 +27,7 @@ public class Truck extends Automobile implements hasFlatbed, Movable{
     }
 
 
-
+    @Override
     public void lowerFlatbed(){
         if (currentSpeed != 0 ) {
             System.out.println("Cannot lower the flatbed while the engine is on!");
@@ -67,6 +70,14 @@ public class Truck extends Automobile implements hasFlatbed, Movable{
             currentRotation += 2*Math.PI;
         }
     }
-
-
+    @Override
+    public void gas(double amount) {
+        if (flatbedAngle != 0){
+            currentSpeed = 0;
+            System.out.println("Cant gas while flatbed angled");
+        }
+        else {
+            super.gas(amount);
+        }
+    }
 }
