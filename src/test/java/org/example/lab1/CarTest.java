@@ -59,14 +59,14 @@ class CarTest {
 
     void MoveNextKvadrant(Car car){
         for (int i = 0 ; i <6; i++)
-            car.turnLeft();}
+            car.getAutomobile().turnLeft();}
 
     double[] updateXY(Car car) {
         MoveNextKvadrant(car);
-        car.move();
+        car.getAutomobile().move();
 
-        double afterX = car.getxPos();
-        double afterY = car.getyPos();
+        double afterX = car.getAutomobile().getxPos();
+        double afterY = car.getAutomobile().getyPos();
 
         return new double[]{afterX, afterY};
     }
@@ -74,20 +74,19 @@ class CarTest {
     @Test
     @DisplayName("Test if the x and y coordinates act correctly in different quadrants")
     void Turning() {
-        Car car = new Car(Color.black, "Volvo", new Engine(100, false),4 );
-        car.startEngine();
-
-        double beforeX = car.getxPos();
-        double beforeY = car.getyPos();
+       Car<RegularEngine> car = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(200),5));
+        car.getAutomobile().startEngine();
+        double beforeX = car.getAutomobile().getxPos();
+        double beforeY = car.getAutomobile().getyPos();
         for (int i = 0 ; i < 3; i++) {
-            car.turnLeft();
+            car.getAutomobile().turnLeft();
         }
 
-        car.incrementSpeed(20);
-        car.move();
+        car.getAutomobile().incrementSpeed(20);
+        car.getAutomobile().move();
 
-        double afterX = car.getxPos();
-        double afterY = car.getyPos();
+        double afterX = car.getAutomobile().getxPos();
+        double afterY = car.getAutomobile().getyPos();
 
         assertTrue(beforeX<afterX);
         assertTrue(beforeY<afterY);
