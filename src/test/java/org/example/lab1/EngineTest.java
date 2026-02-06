@@ -8,29 +8,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class EngineTest {
     @Test
-    @DisplayName("Test if a car with or without turbo can use the turbo methods")
-    public void turboMethodsUseability() {
-        Engine engineWithTurbo = new Engine(100, true);
-        Engine engineWithoutTurbo = new Engine(100, false);
-
-        // Testa om turbo kan sättas igång, resp stängas av
-        // för motor med turbo.
-        engineWithTurbo.setTurboOn();
-        assertTrue(engineWithTurbo.isTurboOn());
-        engineWithTurbo.setTurboOff();
-        assertFalse(engineWithoutTurbo.isTurboOn());
-
-        // Testa om turbo kan sättas igång för en motor
-        // utan turbo
-        engineWithoutTurbo.setTurboOn();
-        assertFalse(engineWithoutTurbo.isTurboOn());
-    }
-
-    @Test
     @DisplayName("Test that the speedFactor method behaves properly based on turbo")
     public void speedFactorConsistency() {
-        Engine engineWithTurbo = new Engine(100, true);
-        Engine engineWithoutTurbo = new Engine(100, false);
+        TurboEngine engineWithTurbo = new TurboEngine(100);
+        RegularEngine engineWithoutTurbo = new RegularEngine(100);
         engineWithTurbo.setTurboOn();
 
         // Testa om speedFactor() är större för motor med turbo
