@@ -11,49 +11,50 @@ class CarTest {
     @Test
     @DisplayName("Test for the mod operations when turning left and right")
     void turnLeftTurnRight() {
-        Car c = new Car(Color.BLUE, "test car", new Engine(100, false),5);
+        Car<RegularEngine> c = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(200),5));
         // Turn the car 360 + 15 derees
-        c.turnRight();
-        assertEquals(345 * Math.PI / 180, c.getCurrentRotation());
-        c.turnLeft();
-        c.turnLeft();
-        assertEquals(15 * Math.PI / 180, c.getCurrentRotation());
+        c.getAutomobile().turnRight();
+        assertEquals(345 * Math.PI / 180, c.getAutomobile().getCurrentRotation());
+        c.getAutomobile().turnLeft();
+        c.getAutomobile().turnLeft();
+        assertEquals(15 * Math.PI / 180, c.getAutomobile().getCurrentRotation());
     }
 
     @Test
     @DisplayName("Test if the speed increments correctly")
     void incrementSpeed() {
-        Car c = new Car(Color.BLUE, "test car", new Engine(100, false),5);
+        Car<RegularEngine> c = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(100),5));
         double amount = 10;
-        c.incrementSpeed(amount);
-        assertEquals(0, c.getCurrentSpeed());
-        c.startEngine();
-        c.incrementSpeed(amount);
-        assertEquals(10.1, c.getCurrentSpeed());
+        c.getAutomobile().incrementSpeed(amount);
+        assertEquals(0, c.getAutomobile().getCurrentSpeed());
+        c.getAutomobile().startEngine();
+        c.getAutomobile().incrementSpeed(amount);
+        System.out.println(c.getAutomobile().getCurrentSpeed());
+        assertEquals(10.1, c.getAutomobile().getCurrentSpeed());
     }
 
     @Test
     @DisplayName("Test if the car can move in different engine stages")
     void notMovingWhenEngineOff() {
-        Car bil = new Car(Color.GREEN, "V70", new Engine(90, true), 4);
-        double startX = bil.getxPos();
-        double startY = bil.getyPos();
+        Car<RegularEngine> bil = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(200),5));
+        double startX = bil.getAutomobile().getxPos();
+        double startY = bil.getAutomobile().getyPos();
 
-        bil.stopEngine();
-        bil.move();
+        bil.getAutomobile().stopEngine();
+        bil.getAutomobile().move();
         // Kontrollerar om bilen rör sig när motorn är av från början...
-        assertEquals(startX, bil.getxPos());
-        assertEquals(startY, bil.getyPos());
+        assertEquals(startX, bil.getAutomobile().getxPos());
+        assertEquals(startY, bil.getAutomobile().getyPos());
 
         // Kontrollerar om den rör sig om motorn stängs av
-        bil.incrementSpeed(10);
-        bil.move();
-        startX = bil.getxPos();
-        startY = bil.getyPos();
-        bil.stopEngine();
-        bil.move();
-        assertEquals(startX, bil.getxPos());
-        assertEquals(startY, bil.getyPos());
+        bil.getAutomobile().incrementSpeed(10);
+        bil.getAutomobile().move();
+        startX = bil.getAutomobile().getxPos();
+        startY = bil.getAutomobile().getyPos();
+        bil.getAutomobile().stopEngine();
+        bil.getAutomobile().move();
+        assertEquals(startX, bil.getAutomobile().getxPos());
+        assertEquals(startY, bil.getAutomobile().getyPos());
     }
 
     void MoveNextKvadrant(Car car){
@@ -127,34 +128,36 @@ class CarTest {
         //fjärde Kvadrant//
 
     }
+
+
     @Test
     @DisplayName("Controls that current speed always less or equal to engine power")
     void SpeedLimit(){
-        Car car = new Car(Color.black, "Volvo", new Engine(100, false),4 );
-        car.startEngine();
+        Car<RegularEngine> car = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(200),5));
+        car.getAutomobile().startEngine();
         for (int i = 0 ; i <99;i++){
-            car.gas(1);
+            car.getAutomobile().gas(1);
 
-            assertTrue(car.getCurrentSpeed() < car.getEngine().getEnginePower());
+            assertTrue(car.getAutomobile().getCurrentSpeed() < car.getAutomobile().getEngine().getEnginePower());
         }
     }
 
     @Test
     @DisplayName("Controls that gas and break only changes within 0-1 range")
     void GasBreakLimit() {
-        Car car = new Car(Color.black, "Volvo", new Engine(100, false), 4);
-        car.startEngine();
-        double previousSpeed = car.getCurrentSpeed();
-        car.gas(1.1);
-        assertEquals(previousSpeed, car.getCurrentSpeed());
+        Car<RegularEngine> car = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(200),5));
+        car.getAutomobile().startEngine();
+        double previousSpeed = car.getAutomobile().getCurrentSpeed();
+        car.getAutomobile().gas(1.1);
+        assertEquals(previousSpeed, car.getAutomobile().getCurrentSpeed());
 
-        car.gas(-1);
-        assertEquals(previousSpeed,car.getCurrentSpeed());
+        car.getAutomobile().gas(-1);
+        assertEquals(previousSpeed,car.getAutomobile().getCurrentSpeed());
 
-        car.brake(-1);
-        assertEquals(previousSpeed,car.getCurrentSpeed());
-        car.brake(2);
-        assertEquals(previousSpeed,car.getCurrentSpeed());
+        car.getAutomobile().brake(-1);
+        assertEquals(previousSpeed,car.getAutomobile().getCurrentSpeed());
+        car.getAutomobile().brake(2);
+        assertEquals(previousSpeed,car.getAutomobile().getCurrentSpeed());
 
     }
 }

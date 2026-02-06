@@ -1,7 +1,7 @@
 package org.example.lab1;
 import java.awt.*;
 public class Automobile<E extends Engine> implements Movable {
-    private double currentSpeed;
+    private double currentSpeed = 0;
     private double currentRotation;
     private double xPos;
     private double yPos;
@@ -15,6 +15,39 @@ public class Automobile<E extends Engine> implements Movable {
         this.modelName = modelName;
         this.engine = engine;
         this.nrDoors = nrDoors;
+    }
+
+    public void incrementSpeed(double amount){
+        if (currentSpeed != 0) {
+            currentSpeed = getCurrentSpeed() + engine.speedFactor() * amount;
+            if (currentSpeed < 0.1) {
+                currentSpeed = 0.1;
+            }
+            else if (currentSpeed > engine.getEnginePower()){
+                currentSpeed = engine.getEnginePower();
+            }
+        }
+    }
+
+    public void startEngine(){
+        currentSpeed = 0.1;
+    }
+
+    public void stopEngine(){
+        currentSpeed = 0;
+    }
+
+
+    public void gas(double amount) {
+        if (amount >= 0 && amount <= 1) {
+            incrementSpeed(amount);
+        }
+    }
+
+    public void brake(double amount) {
+        if (amount >= 0 && amount <= 1) {
+            incrementSpeed(-amount);
+        }
     }
 
     public double getCurrentSpeed() {
