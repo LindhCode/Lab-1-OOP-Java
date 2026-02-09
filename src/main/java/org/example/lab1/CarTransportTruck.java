@@ -1,38 +1,40 @@
 package org.example.lab1;
-import java.awt.*;
-public class Scania {
-    Truck<TurboEngine> truck;
-    Flatbed flatbed;
 
-    public Scania(Color color, int enginePower) {
-        this.truck = new Truck<>(new Automobile<>(color, "Scania", new TurboEngine(enginePower), 2));
+import java.awt.*;
+
+public class CarTransportTruck {
+    Truck<TurboEngine> truck;
+    CarTransport trailer;
+
+    public CarTransportTruck(Color color, int enginePower){
+        this.truck = new Truck<>(new Automobile<>(color, "CarTransportTruck", new TurboEngine(enginePower),2));
     }
 
-    public void liftFlatbed() {
-        if (truck.getAutomobile().getCurrentSpeed() == 0) {
-            flatbed.liftFlatbed();
+    public void liftRamp(){
+        if(truck.getAutomobile().getCurrentSpeed() == 0){
+            //trailer.liftRamp()
         }
     }
 
-    public void lowerFlatbed() {
-        if (truck.getAutomobile().getCurrentSpeed() == 0) {
-            flatbed.lowerFlatbed();
+    public void lowerRamp(){
+        if(truck.getAutomobile().getCurrentSpeed() == 0){
+            //trailer.lowerRamp()
         }
     }
 
     public void move(){
-        if (flatbed.getFlatbedAngle() == 0){
+        if (trailer.isRampUp()){
             truck.move();
         }
     }
     public void gas(double amount){
-        if (flatbed.getFlatbedAngle() == 0){
+        if (trailer.isRampUp()){
             truck.gas(amount);
         }
     }
 
     public void brake(double amount){
-        if (flatbed.getFlatbedAngle() == 0){
+        if (trailer.isRampUp()){
             truck.brake(amount);
         }
     }
@@ -54,4 +56,3 @@ public class Scania {
     }
 
 }
-
