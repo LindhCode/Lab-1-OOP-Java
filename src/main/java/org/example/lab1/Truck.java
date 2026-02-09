@@ -29,7 +29,15 @@ public class Truck<E extends Engine>{
         this.getAutomobile().turnRight();
     }
 
+    public void startEngine(){
+        this.getAutomobile().startEngine();
+    }
+
+    public void stopEngine(){
+        this.getAutomobile().stopEngine();
+    }
     public Automobile<E> getAutomobile() {
         return automobile;
     }
+
 }

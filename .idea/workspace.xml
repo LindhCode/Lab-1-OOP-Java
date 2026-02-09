@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05b2a278-b8c7-4f54-9be3-d199432c1004" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/CarTransportTruck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/CarTransport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/CarTransport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/CarTransportTruck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/CarTransportTruck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/Scania.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/Truck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/lab1/TruckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/lab1/TruckTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +103,7 @@
       <workItem from="1770049395087" duration="1467000" />
       <workItem from="1770303378800" duration="11145000" />
       <workItem from="1770411493505" duration="47000" />
-      <workItem from="1770644070381" duration="5310000" />
+      <workItem from="1770644070381" duration="6429000" />
     </task>
     <servers />
   </component>

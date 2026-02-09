@@ -45,5 +45,13 @@ public class Scania {
         truck.turnRight();
     }
 
+    public void startEngine(){
+        truck.startEngine();
+    }
+
+    public void stopEngine(){
+        truck.stopEngine();
+    }
+
 }
 
