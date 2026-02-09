@@ -7,30 +7,30 @@ import java.awt.*;
 import java.security.KeyStore;
 
 import static org.junit.jupiter.api.Assertions.*;
-/*
+
 class TruckTest {
     @Test
     @DisplayName("Test if a truck behaves correctly in different flatbed stages")
     public void flatBed() {
-        Truck t = new Truck(Color.white, "test truc", new Engine(2000, true), 2);
+        Scania t = new Scania(Color.black,2000);
+
         // The flatbed should not be rotatable when truck is moving
         t.startEngine();
         t.gas(1);
         t.liftFlatbed();
-        assertEquals(0, t.getCurrentAngle());
+        assertEquals(0, t.flatbed.getFlatbedAngle());
         // The flatbeed should rotate a maximum of 70 degrees
         t.stopEngine();
         for (int i = 0; i < 15; i++) {
             t.liftFlatbed();
         }
-        System.out.println(t.getCurrentAngle());
-        assertEquals(70, t.getCurrentAngle());
+        System.out.println(t.flatbed.getFlatbedAngle());
+        assertEquals(70, t.flatbed.getFlatbedAngle());
         // The truck should not move when flatbed is rotated
         t.startEngine();
         t.gas(1);
-        assertEquals(0, t.getCurrentSpeed());
+        assertEquals(0, t.truck.getAutomobile().getCurrentSpeed());
     }
 }
 
 
- */
