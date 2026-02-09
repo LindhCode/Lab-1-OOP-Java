@@ -12,4 +12,36 @@ public class Volvo240 {
     public Car getCar() {
         return car;
     }
+
+    public double getCurrentSpeed() {
+        return car.getCurrentSpeed();
+    }
+
+    public void brake(double amount) {
+        car.brake(amount);
+    }
+
+    public void gas(double amount) {
+        car.gas(amount);
+    }
+
+    public void move() {
+        car.move();
+    }
+
+    public void turnLeft() {
+        car.turnLeft();
+    }
+
+    public void turnRight() {
+        car.turnRight();
+    }
+
+    public void stopEngine() {
+        car.stopEngine();
+    }
+
+    public void startEngine() {
+        car.startEngine();
+    }
 }
