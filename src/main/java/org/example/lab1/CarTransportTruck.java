@@ -28,6 +28,14 @@ public class CarTransportTruck<A extends StorableCar> {
         return transportTrailer.getCars();
     }
 
+    public double getyPos() {
+        return truck.getyPos();
+    }
+
+    public double getxPos() {
+        return truck.getxPos();
+    }
+
     public void loadCar(A c) {
         double dDistance = Math.sqrt(Math.pow((c.getxPos() - truck.getxPos()), 2) + Math.pow((c.getyPos() - truck.getyPos()), 2));
         if (dDistance < 5) {
@@ -35,13 +43,14 @@ public class CarTransportTruck<A extends StorableCar> {
         }
     }
 
-    public A unloadCar() {
-        if (getCurrentSpeed() == 0 && transportTrailer.getRampUp()) {
+    public void unloadCar() {
+        if (getCurrentSpeed() == 0 && !transportTrailer.getRampUp()) {
             StorableCar c = transportTrailer.unloadCar();
-            c.setxPos(truck.getxPos() + 5);
-            c.setyPos(truck.getyPos() + 5);
+            if (c != null) {
+                c.setxPos(truck.getxPos() + 5);
+                c.setyPos(truck.getyPos() + 5);
+            }
         }
-        return null;
     }
 
     public void move(){
@@ -71,7 +80,9 @@ public class CarTransportTruck<A extends StorableCar> {
     }
 
     public void startEngine(){
-        truck.startEngine();
+        if (transportTrailer.getRampUp()) {
+            truck.startEngine();
+        }
     }
 
     public void stopEngine(){

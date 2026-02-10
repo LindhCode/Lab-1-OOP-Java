@@ -29,6 +29,9 @@ public class CarTransport extends Trailer{
     }
 
     public StorableCar unloadCar() {
-        return cars.pop();
+        if (!cars.isEmpty()) {
+            return cars.pop();
+        }
+        return null;
     }
 }
