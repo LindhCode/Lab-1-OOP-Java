@@ -3,10 +3,6 @@ package org.example.lab1;
 public class Flatbed extends Trailer{
     private int flatbedAngle = 0;
 
-    public Flatbed(double trailerLength) {
-        super(trailerLength);
-    }
-
     public void liftFlatbed() {
         flatbedAngle += 10;
         if (flatbedAngle > 70) {

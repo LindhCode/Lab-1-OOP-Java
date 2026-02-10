@@ -9,12 +9,14 @@ public class Automobile<E extends Engine> implements Movable {
     private Color color;
     private int nrDoors;
     private String modelName;
+    private final int size;
 
-    public Automobile(Color color, String modelName, E engine , int nrDoors) {
+    public Automobile(Color color, String modelName, E engine , int nrDoors, int size) {
         this.color = color;
         this.modelName = modelName;
         this.engine = engine;
         this.nrDoors = nrDoors;
+        this.size = size;
     }
 
     public void incrementSpeed(double amount){
@@ -50,6 +52,14 @@ public class Automobile<E extends Engine> implements Movable {
         }
     }
 
+    public void setxPos(double x) {
+        xPos = x;
+    }
+
+    public void setyPos(double y) {
+        yPos = y;
+    }
+
     public double getCurrentSpeed() {
         return currentSpeed;
     }
@@ -80,6 +90,10 @@ public class Automobile<E extends Engine> implements Movable {
 
     public String getModelName() {
         return modelName;
+    }
+
+    public int getSize() {
+        return size;
     }
 
     @Override

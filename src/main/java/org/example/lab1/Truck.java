@@ -8,6 +8,17 @@ public class Truck<E extends Engine>{
         this.automobile = automobile;
     }
 
+    public double getCurrentSpeed() {
+        return automobile.getCurrentSpeed();
+    }
+
+    public double getyPos() {
+        return automobile.getyPos();
+    }
+
+    public double getxPos() {
+        return automobile.getxPos();
+    }
 
     public void move(){
         this.getAutomobile().move();
@@ -36,8 +47,8 @@ public class Truck<E extends Engine>{
     public void stopEngine(){
         this.getAutomobile().stopEngine();
     }
+
     public Automobile<E> getAutomobile() {
         return automobile;
     }
-
 }

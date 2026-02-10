@@ -5,17 +5,17 @@ public class Scania {
     Flatbed flatbed;
 
     public Scania(Color color, int enginePower) {
-        this.truck = new Truck<>(new Automobile<>(color, "Scania", new TurboEngine(enginePower), 2));
+        this.truck = new Truck<>(new Automobile<>(color, "Scania", new TurboEngine(enginePower), 2, 5));
     }
 
     public void liftFlatbed() {
-        if (truck.getAutomobile().getCurrentSpeed() == 0) {
+        if (truck.getCurrentSpeed() == 0) {
             flatbed.liftFlatbed();
         }
     }
 
     public void lowerFlatbed() {
-        if (truck.getAutomobile().getCurrentSpeed() == 0) {
+        if (truck.getCurrentSpeed() == 0) {
             flatbed.lowerFlatbed();
         }
     }

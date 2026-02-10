@@ -2,11 +2,11 @@ package org.example.lab1;
 
 import java.awt.*;
 
-public class Saab95 {
+public class Saab95 implements StorableCar{
     private Car car;
 
     public Saab95(Color color, int enginePower) {
-        this.car = new Car<TurboEngine>(new Automobile(color, "Saab95", new TurboEngine(enginePower), 5));
+        this.car = new Car<TurboEngine>(new Automobile(color, "Saab95", new TurboEngine(enginePower), 5, 2));
     }
 
     public Car<TurboEngine> getCar() {
@@ -23,6 +23,22 @@ public class Saab95 {
 
     public void turnRight() {
         car.turnRight();
+    }
+
+    public void setyPos(double y) {
+        car.setyPos(y);
+    }
+
+    public void setxPos(double x) {
+        car.setxPos(x);
+    }
+
+    public double getxPos() {
+        return car.getxPos();
+    }
+
+    public double getyPos() {
+        return car.getyPos();
     }
 
     public void turnLeft() {
