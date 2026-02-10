@@ -2,7 +2,7 @@ package org.example.lab1;
 import java.awt.*;
 public class Scania implements StorableTruck {
     Truck<TurboEngine> truck;
-    Flatbed flatbed;
+    Flatbed flatbed = new Flatbed();
 
     public Scania(Color color, int enginePower) {
         this.truck = new Truck<>(new Automobile<>(color, "Scania", new TurboEngine(enginePower), 2, 5));
@@ -36,6 +36,13 @@ public class Scania implements StorableTruck {
             truck.brake(amount);
         }
     }
+    public void startEngine() {
+        if (flatbed.getFlatbedAngle() != 0) {
+            truck.stopEngine();
+        } else {
+            truck.startEngine();
+        }
+    }
 
     public void turnLeft(){
         truck.turnLeft();
@@ -43,10 +50,6 @@ public class Scania implements StorableTruck {
 
     public void turnRight(){
         truck.turnRight();
-    }
-
-    public void startEngine(){
-        truck.startEngine();
     }
 
     public void stopEngine(){

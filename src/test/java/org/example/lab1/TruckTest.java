@@ -13,12 +13,11 @@ class TruckTest {
     @DisplayName("Test if a truck behaves correctly in different flatbed stages")
     public void flatBed() {
         Scania t = new Scania(Color.black,2000);
-
         // The flatbed should not be rotatable when truck is moving
         t.startEngine();
         t.gas(1);
         t.liftFlatbed();
-        assertEquals(0, t.flatbed.getFlatbedAngle());
+        assertEquals(0 , t.flatbed.getFlatbedAngle());
         // The flatbeed should rotate a maximum of 70 degrees
         t.stopEngine();
         for (int i = 0; i < 15; i++) {
@@ -32,5 +31,4 @@ class TruckTest {
         assertEquals(0, t.truck.getAutomobile().getCurrentSpeed());
     }
 }
-
 

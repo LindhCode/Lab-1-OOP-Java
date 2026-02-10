@@ -11,7 +11,7 @@ class CarTest {
     @Test
     @DisplayName("Test for the mod operations when turning left and right")
     void turnLeftTurnRight() {
-        Car<RegularEngine> c = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(200),5));
+        Car<RegularEngine> c = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(200),5, 2));
         // Turn the car 360 + 15 derees
         c.getAutomobile().turnRight();
         assertEquals(345 * Math.PI / 180, c.getAutomobile().getCurrentRotation());
@@ -23,7 +23,7 @@ class CarTest {
     @Test
     @DisplayName("Test if the speed increments correctly")
     void incrementSpeed() {
-        Car<RegularEngine> c = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(100),5));
+        Car<RegularEngine> c = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(100),5, 2));
         double amount = 10;
         c.getAutomobile().incrementSpeed(amount);
         assertEquals(0, c.getAutomobile().getCurrentSpeed());
@@ -36,7 +36,7 @@ class CarTest {
     @Test
     @DisplayName("Test if the car can move in different engine stages")
     void notMovingWhenEngineOff() {
-        Car<RegularEngine> bil = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(200),5));
+        Car<RegularEngine> bil = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(200),5, 2));
         double startX = bil.getAutomobile().getxPos();
         double startY = bil.getAutomobile().getyPos();
 
@@ -74,7 +74,7 @@ class CarTest {
     @Test
     @DisplayName("Test if the x and y coordinates act correctly in different quadrants")
     void Turning() {
-       Car<RegularEngine> car = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(200),5));
+       Car<RegularEngine> car = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(200),5, 2));
         car.getAutomobile().startEngine();
         double beforeX = car.getAutomobile().getxPos();
         double beforeY = car.getAutomobile().getyPos();
@@ -132,7 +132,7 @@ class CarTest {
     @Test
     @DisplayName("Controls that current speed always less or equal to engine power")
     void SpeedLimit(){
-        Car<RegularEngine> car = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(200),5));
+        Car<RegularEngine> car = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(200),5, 2));
         car.getAutomobile().startEngine();
         for (int i = 0 ; i <99;i++){
             car.getAutomobile().gas(1);
@@ -144,7 +144,7 @@ class CarTest {
     @Test
     @DisplayName("Controls that gas and break only changes within 0-1 range")
     void GasBreakLimit() {
-        Car<RegularEngine> car = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(200),5));
+        Car<RegularEngine> car = new Car<>(new Automobile<>(Color.black,"bil",new RegularEngine(200),5, 2));
         car.getAutomobile().startEngine();
         double previousSpeed = car.getAutomobile().getCurrentSpeed();
         car.getAutomobile().gas(1.1);

@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05b2a278-b8c7-4f54-9be3-d199432c1004" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/MechanicShop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/StorableTruck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/lab1/CarTransportTruckTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/Automobile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/Automobile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/CarTransportTruck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/CarTransportTruck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/Engine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/Flatbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/Flatbed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/Saab95.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/Saab95.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/Scania.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/StorableCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/StorableCar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/TurboEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/TurboEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/Volvo240.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/Volvo240.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/lab1/CarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/lab1/CarTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/lab1/TruckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/lab1/TruckTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -57,6 +48,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "JUnit.CarTest.executor": "Run",
+    "JUnit.CarTransportTruckTest.executor": "Run",
     "JUnit.EngineTest.executor": "Run",
     "JUnit.TruckTest.executor": "Run",
     "RunOnceActivity.MCP Project settings loaded": "true",
@@ -67,7 +59,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "Merging feat/car-delegation",
+    "git-widget-placeholder": "feat/car-delegation",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
@@ -130,17 +122,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/org/example/lab1/CarTest.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
