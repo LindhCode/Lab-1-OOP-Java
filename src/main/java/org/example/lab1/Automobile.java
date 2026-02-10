@@ -9,12 +9,14 @@ public class Automobile<E extends Engine> implements Movable, Storable {
     private Color color;
     private int nrDoors;
     private String modelName;
+    private final int size;
 
-    public Automobile(Color color, String modelName, E engine , int nrDoors) {
+    public Automobile(Color color, String modelName, E engine , int nrDoors, int size) {
         this.color = color;
         this.modelName = modelName;
         this.engine = engine;
         this.nrDoors = nrDoors;
+        this.size = size;
     }
 
     public void incrementSpeed(double amount){
@@ -37,7 +39,6 @@ public class Automobile<E extends Engine> implements Movable, Storable {
         currentSpeed = 0;
     }
 
-
     public void gas(double amount) {
         if (amount >= 0 && amount <= 1) {
             incrementSpeed(amount);
@@ -48,6 +49,14 @@ public class Automobile<E extends Engine> implements Movable, Storable {
         if (amount >= 0 && amount <= 1) {
             incrementSpeed(-amount);
         }
+    }
+
+    public void setxPos(double x) {
+        xPos = x;
+    }
+
+    public void setyPos(double y) {
+        yPos = y;
     }
 
     public double getCurrentSpeed() {
@@ -80,6 +89,10 @@ public class Automobile<E extends Engine> implements Movable, Storable {
 
     public String getModelName() {
         return modelName;
+    }
+
+    public int getSize() {
+        return size;
     }
 
     @Override

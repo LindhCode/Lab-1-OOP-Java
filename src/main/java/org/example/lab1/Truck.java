@@ -1,10 +1,23 @@
 package org.example.lab1;
+import java.awt.*;
 
-public class Truck<E extends Engine> implements StorableTruck {
+public class Truck<E extends Engine>{
     private Automobile<E> automobile;
 
     public Truck(Automobile<E> automobile){
         this.automobile = automobile;
+    }
+
+    public double getCurrentSpeed() {
+        return automobile.getCurrentSpeed();
+    }
+
+    public double getyPos() {
+        return automobile.getyPos();
+    }
+
+    public double getxPos() {
+        return automobile.getxPos();
     }
 
     public void move(){
@@ -37,13 +50,5 @@ public class Truck<E extends Engine> implements StorableTruck {
 
     public Automobile<E> getAutomobile() {
         return automobile;
-    }
-
-    public double getxPos() {
-        return automobile.getxPos();
-    }
-
-    public double getyPos() {
-        return automobile.getyPos();
     }
 }

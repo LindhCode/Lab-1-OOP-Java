@@ -1,5 +1,7 @@
 package org.example.lab1;
 
+import java.awt.*;
+
 public class Car<E extends Engine> implements StorableCar {
     private Automobile<E> automobile;
 
@@ -11,12 +13,32 @@ public class Car<E extends Engine> implements StorableCar {
         return automobile;
     }
 
+    public int getSize() {
+        return automobile.getSize();
+    }
+
     public void startEngine() {
         automobile.startEngine();
     }
 
+    public double getxPos() {
+        return automobile.getxPos();
+    }
+
+    public double getyPos() {
+        return automobile.getyPos();
+    }
+
     public void stopEngine() {
         automobile.stopEngine();
+    }
+
+    public void setyPos(double y) {
+        automobile.setyPos(y);
+    }
+
+    public void setxPos(double x) {
+        automobile.setxPos(x);
     }
 
     public void turnRight() {
@@ -41,13 +63,5 @@ public class Car<E extends Engine> implements StorableCar {
 
     public double getCurrentSpeed() {
         return automobile.getCurrentSpeed();
-    }
-
-    public double getxPos() {
-        return automobile.getxPos();
-    }
-
-    public double getyPos() {
-        return automobile.getyPos();
     }
 }

@@ -1,11 +1,10 @@
 package org.example.lab1;
 
+import java.util.Stack;
+
 public class CarTransport extends Trailer{
     private boolean rampUp = true;
-
-    public CarTransport(double trailerLength) {
-        super(trailerLength);
-    }
+    Stack<StorableCar> cars = new Stack<>();
 
     public void lowerRamp(){
         rampUp = false;
@@ -15,9 +14,24 @@ public class CarTransport extends Trailer{
         rampUp = true;
     }
 
-    public boolean isRampUp() {
+    public boolean getRampUp() {
         return rampUp;
     }
 
-    // TODO - Lägg in logik för rampen och att lasta bilar osv...
+    public Stack<StorableCar> getCars() {
+        return cars;
+    }
+
+    public void loadCar(StorableCar c) {
+        if (!rampUp && cars.size() < 10) {
+            cars.push(c);
+        }
+    }
+
+    public StorableCar unloadCar() {
+        if (!cars.isEmpty()) {
+            return cars.pop();
+        }
+        return null;
+    }
 }
