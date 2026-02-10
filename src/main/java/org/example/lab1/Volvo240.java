@@ -2,7 +2,7 @@ package org.example.lab1;
 
 import java.awt.*;
 
-public class Volvo240 {
+public class Volvo240 implements StorableCar {
     private Car<RegularEngine> car;
 
     public Volvo240(Color color, int enginePower) {
@@ -43,5 +43,13 @@ public class Volvo240 {
 
     public void startEngine() {
         car.startEngine();
+    }
+
+    public double getxPos() {
+        return car.getxPos();
+    }
+
+    public double getyPos() {
+        return car.getyPos();
     }
 }
