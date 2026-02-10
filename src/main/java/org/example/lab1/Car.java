@@ -13,6 +13,10 @@ public class Car<E extends Engine> implements StorableCar {
         return automobile;
     }
 
+    public int getSize() {
+        return automobile.getSize();
+    }
+
     public void startEngine() {
         automobile.startEngine();
     }

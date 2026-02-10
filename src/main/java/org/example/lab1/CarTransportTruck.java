@@ -38,7 +38,7 @@ public class CarTransportTruck<A extends StorableCar> {
 
     public void loadCar(A c) {
         double dDistance = Math.sqrt(Math.pow((c.getxPos() - truck.getxPos()), 2) + Math.pow((c.getyPos() - truck.getyPos()), 2));
-        if (dDistance < 5) {
+        if (dDistance < 10 && c.getSize() < 3) {
             transportTrailer.loadCar(c);
         }
     }
@@ -56,6 +56,10 @@ public class CarTransportTruck<A extends StorableCar> {
     public void move(){
         if (transportTrailer.getRampUp()) {
             truck.move();
+            for (StorableCar c : transportTrailer.getCars()) {
+                c.setxPos(truck.getxPos());
+                c.setyPos(truck.getyPos());
+            }
         }
     }
 

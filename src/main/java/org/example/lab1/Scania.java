@@ -1,6 +1,6 @@
 package org.example.lab1;
 import java.awt.*;
-public class Scania {
+public class Scania implements StorableTruck {
     Truck<TurboEngine> truck;
     Flatbed flatbed;
 
@@ -51,6 +51,14 @@ public class Scania {
 
     public void stopEngine(){
         truck.stopEngine();
+    }
+
+    public double getxPos() {
+        return truck.getxPos();
+    }
+
+    public double getyPos() {
+        return truck.getyPos();
     }
 
 }

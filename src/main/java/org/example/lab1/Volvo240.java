@@ -13,6 +13,10 @@ public class Volvo240 implements StorableCar{
         return car;
     }
 
+    public int getSize() {
+        return car.getSize();
+    }
+
     public double getCurrentSpeed() {
         return car.getCurrentSpeed();
     }

@@ -17,6 +17,10 @@ public class Saab95 implements StorableCar{
         car.startEngine();
     }
 
+    public int getSize() {
+        return car.getSize();
+    }
+
     public void stopEngine() {
         car.stopEngine();
     }
