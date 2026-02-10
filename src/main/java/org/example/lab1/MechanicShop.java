@@ -34,7 +34,7 @@ public class MechanicShop<A extends Storable> {
     }
 
     public A removeFromRepair(int spot){
-        if (getObjectsInShop().size() == spot ) {
+        if (getObjectsInShop().size() >= spot ) {
             A car = getObjectsInShop().get(spot);
             getObjectsInShop().remove(spot - 1);
             return car;

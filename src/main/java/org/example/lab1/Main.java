@@ -27,6 +27,7 @@ public class Main {
         System.out.println(scaniaShop.getObjectsInShop().size());
 
         System.out.println(scaniaShop.removeFromRepair(3));
+        System.out.println(scaniaShop.getObjectsInShop().size());
 
     }
 }
