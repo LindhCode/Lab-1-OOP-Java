@@ -22,8 +22,8 @@ public class MechanicShop<A extends Storable> {
     }
 
     public void addToRepairList(A repairObject){
-        if(Math.abs(repairObject.getxPos() - this.xPos) <= 9
-        && Math.abs(repairObject.getyPos() - this.yPos) <= 9
+        if(Math.abs(repairObject.getxPos() - this.xPos) <= 10
+        && Math.abs(repairObject.getyPos() - this.yPos) <= 10
         && getObjectsInShop().size() != capacity){
             objectsInShop.add(repairObject);
             System.out.println("Your car is at repair place: " + getObjectsInShop().size());
