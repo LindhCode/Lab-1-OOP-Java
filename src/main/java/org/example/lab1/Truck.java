@@ -36,6 +36,7 @@ public class Truck<E extends Engine>{
     public void stopEngine(){
         this.getAutomobile().stopEngine();
     }
+
     public Automobile<E> getAutomobile() {
         return automobile;
     }
