@@ -1,8 +1,6 @@
 package org.example.lab1;
 
-import java.awt.*;
-
-public class Car<E extends Engine> {
+public class Car<E extends Engine> implements StorableCar {
     private Automobile<E> automobile;
 
     public Car(Automobile<E> automobile) {
@@ -43,5 +41,13 @@ public class Car<E extends Engine> {
 
     public double getCurrentSpeed() {
         return automobile.getCurrentSpeed();
+    }
+
+    public double getxPos() {
+        return automobile.getxPos();
+    }
+
+    public double getyPos() {
+        return automobile.getyPos();
     }
 }

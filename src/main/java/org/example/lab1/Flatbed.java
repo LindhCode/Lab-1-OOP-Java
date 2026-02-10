@@ -24,4 +24,5 @@ public class Flatbed extends Trailer{
     public int getFlatbedAngle() {
         return flatbedAngle;
     }
+
 }

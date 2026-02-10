@@ -2,7 +2,7 @@ package org.example.lab1;
 
 import java.awt.*;
 
-public class CarTransportTruck {
+public class CarTransportTruck implements StorableTruck {
     Truck<TurboEngine> truck;
     CarTransport trailer;
 
@@ -55,4 +55,11 @@ public class CarTransportTruck {
         truck.stopEngine();
     }
 
+    public double getxPos() {
+        return truck.getxPos();
+    }
+
+    public double getyPos() {
+        return truck.getyPos();
+    }
 }

@@ -1,6 +1,6 @@
 package org.example.lab1;
 
-public class Engine {
+public class Engine{
     protected int enginePower;
 
     public Engine(int enginePower) {
@@ -14,4 +14,5 @@ public class Engine {
     public double getEnginePower(){
         return enginePower;
     }
+
 }

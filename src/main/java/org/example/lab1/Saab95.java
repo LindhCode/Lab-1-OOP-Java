@@ -2,7 +2,7 @@ package org.example.lab1;
 
 import java.awt.*;
 
-public class Saab95 {
+public class Saab95 implements StorableCar {
     private Car car;
 
     public Saab95(Color color, int enginePower) {
@@ -43,5 +43,13 @@ public class Saab95 {
 
     public double getCurrentSpeed() {
         return car.getCurrentSpeed();
+    }
+
+    public double getxPos() {
+        return car.getxPos();
+    }
+
+    public double getyPos() {
+        return car.getyPos();
     }
 }

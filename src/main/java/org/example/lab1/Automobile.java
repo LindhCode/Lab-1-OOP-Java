@@ -1,6 +1,6 @@
 package org.example.lab1;
 import java.awt.*;
-public class Automobile<E extends Engine> implements Movable {
+public class Automobile<E extends Engine> implements Movable, Storable {
     private double currentSpeed = 0;
     private double currentRotation;
     private double xPos;
