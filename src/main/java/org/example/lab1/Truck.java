@@ -8,7 +8,6 @@ public class Truck<E extends Engine>{
         this.automobile = automobile;
     }
 
-
     public void move(){
         this.getAutomobile().move();
     }

@@ -6,12 +6,16 @@ public class Scania {
 
     public Scania(Color color, int enginePower) {
         this.truck = new Truck<>(new Automobile<>(color, "Scania", new TurboEngine(enginePower), 2));
+        this.flatbed = new Flatbed(5);
     }
 
     public void liftFlatbed() {
-        if (truck.getAutomobile().getCurrentSpeed() == 0) {
-            flatbed.liftFlatbed();
-        }
+
+            if (truck.getAutomobile().getCurrentSpeed() == 0) {
+                flatbed.liftFlatbed();
+            }
+
+
     }
 
     public void lowerFlatbed() {
@@ -46,7 +50,10 @@ public class Scania {
     }
 
     public void startEngine(){
-        truck.startEngine();
+        if (flatbed.getFlatbedAngle() != 0){
+            truck.stopEngine();
+        }
+        else {truck.startEngine();}
     }
 
     public void stopEngine(){

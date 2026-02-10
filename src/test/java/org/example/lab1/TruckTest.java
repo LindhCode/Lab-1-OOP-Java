@@ -18,7 +18,7 @@ class TruckTest {
         t.startEngine();
         t.gas(1);
         t.liftFlatbed();
-        assertEquals(0, t.flatbed.getFlatbedAngle());
+        assertEquals(0 , t.flatbed.getFlatbedAngle());
         // The flatbeed should rotate a maximum of 70 degrees
         t.stopEngine();
         for (int i = 0; i < 15; i++) {

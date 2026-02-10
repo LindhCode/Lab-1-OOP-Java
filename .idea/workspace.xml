@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="05b2a278-b8c7-4f54-9be3-d199432c1004" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/CarTransportTruck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/CarTransportTruck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/Scania.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab1/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab1/Truck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/lab1/TruckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/lab1/TruckTest.java" afterDir="false" />
@@ -58,7 +57,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "feat/new__truck__structure",
+    "git-widget-placeholder": "feat/TrucktestFix",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
